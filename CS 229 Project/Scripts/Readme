@@ -1,0 +1,44 @@
+This is an instruction of using all the scripts:
+
+generate.R
+use polyester to generate the short reads based on cDNA
+
+generate2.R
+use polyester to generate the short reads based on randomly sampled protein coding DNA
+
+Merge1.sh and Merge2.sh 
+Merge the sample with same name (sample01.fasta, sample02.fasta, etc) in folder single_error0_cDNA and single_error1_cDNA,respectively.
+
+run_all.sh
+the bash to run all the three methods (need to change the dir in this script to the dir you put these methods)
+
+run_rnaskim_v2.sh(in RNASkim/src)
+bash to run RNASkim
+
+run_kallisto_v2.sh(in kallisto/)
+bash to run Kallisto
+
+run_sailfish_v2.sh (in SailfishBeta-0.10.0_CentOS5/bin)
+bash to sun Sailfish
+
+groundTruth_each_sample:
+Calculate the groundTruth of each sample.
+RUN the script in M229s/ (parent dir of folder "scripts")
+The groundTruth of each sample can be find in each folder.
+
+parseFasta.py
+Calculate the ground truth of cDNA reads
+
+filter_100.py
+build a filter to select reads equal or longer than 100 bp.
+
+ChangeFormat.py
+change the cDNA into specialized format that used in RNASkim
+
+changeFormage_protein_coding.py
+change the protein coding DNA file with specialized format into the format can be used in polyerster.
+>T1 gene:G1
+ATT...
+
+RandomTrans.py
+randomly sample 5% protein coding DNA
